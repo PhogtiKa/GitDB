@@ -1,0 +1,12 @@
+FROM node:18.10.0
+
+#my app test
+WORKDIR /app
+ADD . /app/
+RUN vim install
+RUN RUN apt-get update && apt-get install htop
+RUN npm install
+RUN npm run build
+RUN htop install 
+
+CMD ["npm", "start"]
